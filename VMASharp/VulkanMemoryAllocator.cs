@@ -566,8 +566,8 @@ namespace VMASharp
             VkApi.GetBufferMemoryRequirements2(this.Device, &req, &memReq2);
 
             memReq = memReq2.MemoryRequirements;
-            requiresDedicatedAllocation = dedicatedRequirements.RequiresDedicatedAllocation != 0;
-            prefersDedicatedAllocation = dedicatedRequirements.PrefersDedicatedAllocation != 0;
+            requiresDedicatedAllocation = dedicatedRequirements.RequiresDedicatedAllocation != 0u;
+            prefersDedicatedAllocation = dedicatedRequirements.PrefersDedicatedAllocation != 0u;
         }
 
         internal void GetImageMemoryRequirements(Image image, out MemoryRequirements memReq, out bool requiresDedicatedAllocation, out bool prefersDedicatedAllocation)
@@ -592,8 +592,8 @@ namespace VMASharp
             VkApi.GetImageMemoryRequirements2(this.Device, &req, &memReq2);
 
             memReq = memReq2.MemoryRequirements;
-            requiresDedicatedAllocation = dedicatedRequirements.RequiresDedicatedAllocation != 0;
-            prefersDedicatedAllocation = dedicatedRequirements.PrefersDedicatedAllocation != 0;
+            requiresDedicatedAllocation = dedicatedRequirements.RequiresDedicatedAllocation != 0u;
+            prefersDedicatedAllocation = dedicatedRequirements.PrefersDedicatedAllocation != 0u;
         }
 
         internal Allocation AllocateMemory(in MemoryRequirements memReq, in DedicatedAllocationInfo dedicatedInfo,
